@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareCode - View Data</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+
+            document.getElementById('fullName').textContent = params.get('fullName') || 'N/A';
+            document.getElementById('dob').textContent = params.get('dob') || 'N/A';
+            document.getElementById('address').textContent = params.get('address') || 'N/A';
+            document.getElementById('emergencyContact').textContent = params.get('emergencyContact') || 'N/A';
+            document.getElementById('alternateContact').textContent = params.get('alternateContact') || 'N/A';
+        });
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <h1>CareCode</h1>
+        <p>View stored information</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Generate QR</a></li>
+            <li><a href="view.html" class="active">View Data</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="search-section">
+            <h2>Retrieve Information</h2>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Enter QR code ID or scan QR">
+                <button id="searchBtn">Search</button>
+                <button id="scanBtn">Scan QR</button>
+            </div>
+        </section>
+
+        <section class="data-section" id="dataSection" style="display: none;">
+            <h2> Information</h2>
+            <div class="data-card" id="dataDisplay">
+                <!-- Data will be displayed here -->
+            </div>
+            <button id="printBtn" class="print-btn">Print Information</button>
+        </section>
+
+        <section class="scan-modal" id="scanModal" style="display: none;">
+            <div class="modal-content">
+                <span class="close-btn" id="closeScan">&times;</span>
+                <h3>Scan QR Code</h3>
+                <div id="scanner"></div>
+                <p>Point your camera at the QR code to scan</p>
+            </div>
+        </section>
+        <h2>Personal Information</h2>
+<p><strong>Full Name:</strong> <span id="fullName"></span></p>
+<p><strong>Date of Birth:</strong> <span id="dob"></span></p>
+<p><strong>Address:</strong> <span id="address"></span></p>
+<p><strong>Emergency Contact:</strong> <span id="emergencyContact"></span></p>
+<p><strong>Alternate Contact:</strong> <span id="alternateContact"></span></p>
+
+    </main>
+
+    <footer>
+        <p>CareCode &copy; 2023 | Always carry your personal information with you</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

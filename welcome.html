@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareCode - Welcome</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body, html {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+    p{
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      max-width: 600px;
+      padding: 0 20px;
+    }
+
+    .get-started-btn {
+      padding: 15px 40px;
+      font-size: 1.2em;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .get-started-btn:hover {
+      background-color: #2980b9;
+      transform: scale(1.05);
+    }
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to CareCode</h1>
+  <p>All your personal information in one secure QR scan. Stay prepared. Stay safe. Anywhere, anytime!</p>
+  <button class="get-started-btn" onclick="goToLogin()">Get Started</button>
+  <footer>
+    CareCode &copy; 2025 | Your personal companion
+  </footer>
+  <script>
+    function goToLogin() {
+      window.location.href = 'login.html'; // <-- make sure your login page is named login.html
+    }
+  </script>
+</body>
+</html>
